@@ -15,19 +15,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-
-      - name: Build and publish planck to pypi
-        run: make publish
-        env:
-          FLIT_INDEX_URL: ${{ vars.FLIT_INDEX_URL }}
-          FLIT_USERNAME: ${{ vars.FLIT_USERNAME }}
-          FLIT_PASSWORD: ${{ secrets.FLIT_PASSWORD }}
-          TWINE_REPOSITORY_URL: ${{ vars.TWINE_REPOSITORY_URL }}
-          TWINE_USERNAME: ${{ vars.TWINE_USERNAME }}
-          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+#      - uses: actions/setup-python@v4
+#        with:
+#          python-version: "3.10"
+#
+#      - name: Build and publish planck to pypi
+#        run: make publish
+#        env:
+#          FLIT_INDEX_URL: ${{ vars.FLIT_INDEX_URL }}
+#          FLIT_USERNAME: ${{ vars.FLIT_USERNAME }}
+#          FLIT_PASSWORD: ${{ secrets.FLIT_PASSWORD }}
+#          TWINE_REPOSITORY_URL: ${{ vars.TWINE_REPOSITORY_URL }}
+#          TWINE_USERNAME: ${{ vars.TWINE_USERNAME }}
+#          TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
 
   tag:
     permissions:
