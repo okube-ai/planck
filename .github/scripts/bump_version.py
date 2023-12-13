@@ -4,13 +4,13 @@ from packaging import version
 
 script_root = os.path.dirname(__file__)
 package_name = "planck"
-laktory_root = f"./{package_name}/"
+package_root = f"./{package_name}/"
 
 
 def main():
 
     # Filepaths
-    version_filepath = os.path.join(laktory_root, "_version.py")
+    version_filepath = os.path.join(package_root, "_version.py")
     local_env_filepath = os.path.join(script_root, "git.env")
     git_env_filepath = os.getenv("GITHUB_OUTPUT", local_env_filepath)
     changelog_filepath = os.path.join("./", "CHANGELOG.md")
@@ -20,7 +20,7 @@ def main():
         v0 = fp.read().split("=")[-1].strip().replace('"', '')
         v0 = version.parse(v0)
         v1 = version.Version(f"{v0.major}.{v0.minor}.{v0.micro + 1}")
-    print(f"Bumping laktory to {v1}")
+    print(f"Bumping {package_name} to {v1}")
 
     # Update version file
     print(f"Updating _version.py")
