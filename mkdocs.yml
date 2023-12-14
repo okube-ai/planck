@@ -63,7 +63,7 @@ plugins:
           options:
             docstring_options:
               ignore_init_summary: true
-            docstring_section_style: spacy
+            docstring_section_style: table
             docstring_style: numpy
             filters: ["!^_"]
             group_by_category: true
@@ -88,7 +88,8 @@ nav:
     - About: index.md
     - Installation: install.md
     - Quickstart: quickstart.md
-#  - API Reference:
+  - API Reference:
+      - api/index.md
 #    - BaseSettings: api/basesettings.md
 #    - Field: api/field.md
 #    - SettingsConfigDict: api/settingsconfigdict.md
