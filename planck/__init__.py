@@ -11,9 +11,9 @@ __version__ = VERSION
 # Classes                                                                     #
 # --------------------------------------------------------------------------- #
 
-# from .basesettings import BaseSettings
-# from .field import Field
-# from .settingsconfigdict import SettingsConfigDict
+from .physicalnondimensionalconstant import PhysicalNonDimensionalConstant
+from .physicalnondimensionalconstant import PhysicalNonDimensionalConstant
+from .unitconstant import UnitConstant
 
 
 # --------------------------------------------------------------------------- #
