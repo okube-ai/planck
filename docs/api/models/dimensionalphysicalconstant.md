@@ -1,0 +1,1 @@
+::: planck.models.DimensionalPhysicalConstant

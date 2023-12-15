@@ -4,10 +4,6 @@ For typical usage, a simple pip install will do the trick.
 pip install planck
 ```
 
-The main dependencies are:
-
-* [`numpy`](https://pypi.org/project/pydantic/): TODO.
-
 If you've got Python 3.8+ and `pip` installed, you're good to go. 
 It is generally recommended to use a virtual environment for the installation. 
 

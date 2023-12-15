@@ -4,10 +4,7 @@ import numpy as np
 
 from planck._scipy import sp_constants
 from planck.models.unit import Unit
-from planck.models.nondimensionalphysicalconstant import NonDimensionalPhysicalConstant
-from planck.models.dimensionalphysicalconstant import DimensionalPhysicalConstant
 from planck._common import shortcuts
-from planck.functions import convert_temperature
 
 
 TEMPERATURE_UNITS = [
@@ -29,6 +26,9 @@ TEMPERATURE_UNITS = [
 
 
 class Units(dict):
+    """
+    Units library storing `planck.models.Unit` models.
+    """
     def convert(
         self, value: Union[float, np.array], source_unit: str, target_unit: str
     ) -> Union[float, np.array]:
@@ -49,8 +49,14 @@ class Units(dict):
         :
             Value expressed as `target_unit`
         """
+
+        # Temperature
         if source_unit.lower() in TEMPERATURE_UNITS:
-            return convert_temperature(value, source_unit, target_unit)
+            if source_unit == "degc":
+                source_unit = "c"
+            if target_unit == "degc":
+                target_unit = "c"
+            return sp_constants.convert_temperature(value, source_unit, target_unit)
 
         return value * units[source_unit][target_unit]
 
@@ -332,3 +338,4 @@ for k0 in list(d.keys()):
             d[k1][k0] = 1.0 / d[k0][k1]
 
 units = d
+"""Units Library"""

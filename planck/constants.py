@@ -13,6 +13,10 @@ from planck.units import units
 
 
 class Constants(dict):
+    """
+    Constants library storing `planck.models.DimensionalPhysicalConstant` and
+    `planck.models.NonDimensionalPhysicalConstant` models.
+    """
     def find(self, sub: str = None) -> list:
         """
         Return list of constant keys containing a given string
@@ -200,3 +204,4 @@ for k0 in list(d.keys()):
             d[k0][shortcuts[k1]] = d[k0][k1]
 
 constants = d
+"""Constants Library"""

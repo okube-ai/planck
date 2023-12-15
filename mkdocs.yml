@@ -89,7 +89,14 @@ nav:
     - Installation: install.md
     - Quickstart: quickstart.md
   - API Reference:
-      - api/index.md
+#      - Functions:
+#          - convert_temperature: api/functions/converttemperature.md
+      - Constants: api/constants.md
+      - Units: api/units.md
+      - Models:
+        - DimensionalPhysicalConstant: api/models/dimensionalphysicalconstant.md
+        - NonDimensionalPhysicalConstant: api/models/nondimensionalphysicalconstant.md
+        - Unit: api/models/unit.md
 #    - BaseSettings: api/basesettings.md
 #    - Field: api/field.md
 #    - SettingsConfigDict: api/settingsconfigdict.md

@@ -13,6 +13,33 @@ class NonDimensionalPhysicalConstant(float):
         name: str = None,
         value: float = None,
     ):
+        """
+        Non-dimensional physical constant
+
+        Parameters
+        ----------
+        symbol:
+            Constant symbol
+        name:
+            Constant name
+        value:
+            Constant value
+
+        Examples
+        --------
+        ```py
+        from planck import models
+
+        const = models.NonDimensionalPhysicalConstant(
+            "gamma_air", "Ratio of specific heats (cp/cv) for air", 1.4
+        )
+        print(const)
+        '''
+        Ratio of specific heats (cp/cv) for air [gamma_air]:
+        1.4
+        '''
+        ```
+        """
         float.__init__(value)
         self.symbol = symbol
         self.name = name

@@ -44,17 +44,41 @@ class Unit(dict):
         Parameters
         ----------
         symbol:
-            Unit symbol (e.g. "m")
+            Unit symbol
         quantity:
-            Unit quantity (e.g. "length")
+            Unit quantity
         name:
-            Unit name (e.g. "meter")
+            Unit name
         si_prefixes:
-            List of supported international system prefixes (e.g. "k", "micro")
+            List of supported international system prefixes
         order:
             Order of the quantity
         values:
             Values expressed in other units
+
+        Examples
+        --------
+        ```py
+        from planck import models
+        from planck import sp_constants
+
+        unit = models.Unit(
+            symbol="m",
+            quantity="length",
+            values={
+                "in": 1.0 / sp_constants.inch,
+                "ft": 1.0 / sp_constants.foot,
+                "mi": 1.0 / sp_constants.mile,
+                "NM": 1.0 / sp_constants.nautical_mile,
+            },
+            si_prefixes=["m", "c", "", "k"],
+        )
+        print(unit)
+        '''
+        metre [m] - unit of length:
+        {'in': 39.37007874015748, 'ft': 3.280839895013124, 'mi': 0.000621371192237334, 'NM': 0.0005399568034557236, 'mm': 1000.0, 'cm': 100.0, 'm': 1.0, 'km': 0.001}
+        '''
+        ```
         """
         # Default mutable values
         if values is None:
