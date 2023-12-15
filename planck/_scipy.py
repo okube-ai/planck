@@ -8,6 +8,7 @@ DEFAULT_PERIOD = "1d"
 # Main Class - scipy.constants mock                                           #
 # --------------------------------------------------------------------------- #
 
+
 class ScipyConstants:
     def __init__(self):
         self.inch = 0.0254
@@ -67,34 +68,37 @@ class ScipyConstants:
             Value(s) of the converted temperature(s) expressed in the new scale.
         """
         # Convert from `old_scale` to Kelvin
-        if old_scale.lower() in ['celsius', 'c']:
+        if old_scale.lower() in ["celsius", "c"]:
             tempo = np.asanyarray(val) + self.zero_Celsius
-        elif old_scale.lower() in ['kelvin', 'k']:
+        elif old_scale.lower() in ["kelvin", "k"]:
             tempo = np.asanyarray(val)
-        elif old_scale.lower() in ['fahrenheit', 'f']:
+        elif old_scale.lower() in ["fahrenheit", "f"]:
             tempo = (np.asanyarray(val) - 32) * 5 / 9 + self.zero_Celsius
-        elif old_scale.lower() in ['rankine', 'r']:
+        elif old_scale.lower() in ["rankine", "r"]:
             tempo = np.asanyarray(val) * 5 / 9
         else:
-            raise NotImplementedError("%s scale is unsupported: supported scales "
-                                      "are Celsius, Kelvin, Fahrenheit, and "
-                                      "Rankine" % old_scale)
+            raise NotImplementedError(
+                "%s scale is unsupported: supported scales "
+                "are Celsius, Kelvin, Fahrenheit, and "
+                "Rankine" % old_scale
+            )
         # and from Kelvin to `new_scale`.
-        if new_scale.lower() in ['celsius', 'c']:
+        if new_scale.lower() in ["celsius", "c"]:
             res = tempo - self.zero_Celsius
-        elif new_scale.lower() in ['kelvin', 'k']:
+        elif new_scale.lower() in ["kelvin", "k"]:
             res = tempo
-        elif new_scale.lower() in ['fahrenheit', 'f']:
+        elif new_scale.lower() in ["fahrenheit", "f"]:
             res = (tempo - self.zero_Celsius) * 9 / 5 + 32
-        elif new_scale.lower() in ['rankine', 'r']:
+        elif new_scale.lower() in ["rankine", "r"]:
             res = tempo * 9 / 5
         else:
-            raise NotImplementedError("'%s' scale is unsupported: supported "
-                                      "scales are 'Celsius', 'Kelvin', "
-                                      "'Fahrenheit', and 'Rankine'" % new_scale)
+            raise NotImplementedError(
+                "'%s' scale is unsupported: supported "
+                "scales are 'Celsius', 'Kelvin', "
+                "'Fahrenheit', and 'Rankine'" % new_scale
+            )
 
         return res
 
 
 sp_constants = ScipyConstants()
-

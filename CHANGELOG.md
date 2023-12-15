@@ -2,13 +2,8 @@
 
 ## [0.0.2] - Unreleased
 ### Added
-* n/a
-### Fixed
-* n/a
-### Updated
-* n/a
-### Breaking changes
-* n/a
+* Physical Constants
+* Units
 
 ## [0.0.1] - 2023-12-13
 ### Added
