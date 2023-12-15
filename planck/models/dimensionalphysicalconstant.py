@@ -21,9 +21,8 @@ class DimensionalPhysicalConstant(dict):
         self.symbol = symbol
         self.name = name
 
-    # def __repr__(self, *args, **kwargs):
-    #     s = ""
-    #     s += "Physical constant - {0:s} ({1:s}) : ".format(self.name, self.symbol)
-    #     s += super(PhysicalDimensionalConstant, self).__repr__(*args, **kwargs)
-    #     s += "\n"
-    #     return s
+    def __repr__(self, *args, **kwargs):
+        s = ""
+        s += f"{self.name} [{self.symbol}]:\n"
+        s += super().__repr__(*args, **kwargs)
+        return s

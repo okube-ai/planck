@@ -5,7 +5,11 @@ from planck import units
 
 
 def test_units():
-    assert units["m"]["mm"] == 1000
+    m = units["m"]
+    assert m.symbol == "m"
+    assert m.name == "metre"
+    assert m.quantity == "length"
+    assert m["mm"] == 1000
 
 
 def test_permutations():

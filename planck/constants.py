@@ -11,8 +11,8 @@ from planck.units import units
 # Main Class                                                                  #
 # --------------------------------------------------------------------------- #
 
-class Constants(dict):
 
+class Constants(dict):
     def find(self, sub: str = None) -> list:
         """
         Return list of constant keys containing a given string

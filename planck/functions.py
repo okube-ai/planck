@@ -10,9 +10,9 @@ __all__ = [
 
 
 def convert_temperature(
-        value: Union[float, List[float]],
-        source: str,
-        target: str,
+    value: Union[float, List[float]],
+    source: str,
+    target: str,
 ):
     """
     Convert from a temperature scale to another one among Celsius, Kelvin, Fahrenheit and Rankine scales.

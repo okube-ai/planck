@@ -10,16 +10,28 @@ from planck._common import shortcuts
 from planck.functions import convert_temperature
 
 
-TEMPERATURE_UNITS = ["degc", "c", "celcius", "k", "kelvin", "fahrenheit", "f", "rankine", "r"]
+TEMPERATURE_UNITS = [
+    "degc",
+    "c",
+    "celcius",
+    "k",
+    "kelvin",
+    "fahrenheit",
+    "f",
+    "rankine",
+    "r",
+]
 
 
 # --------------------------------------------------------------------------- #
 # Main Class                                                                  #
 # --------------------------------------------------------------------------- #
 
-class Units(dict):
 
-    def convert(self, value: Union[float, np.array], source_unit: str, target_unit: str) -> Union[float, np.array]:
+class Units(dict):
+    def convert(
+        self, value: Union[float, np.array], source_unit: str, target_unit: str
+    ) -> Union[float, np.array]:
         """
         Convert a `value` from `source_unit` to `target_unit`
 
@@ -40,7 +52,7 @@ class Units(dict):
         if source_unit.lower() in TEMPERATURE_UNITS:
             return convert_temperature(value, source_unit, target_unit)
 
-        return value*units[source_unit][target_unit]
+        return value * units[source_unit][target_unit]
 
     def find(self, sub: str = None, quantity: str = None) -> list:
         """

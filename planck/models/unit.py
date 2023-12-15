@@ -2,6 +2,7 @@ import re
 from typing import Dict
 
 from planck._common import si_prefixes
+from planck._common import all_units
 
 
 def _split_symbol(symbol):
@@ -37,11 +38,31 @@ class Unit(dict):
         order: int = 1,
         values: Dict[str, float] = None,
     ):
+        """
+        Unit model
+
+        Parameters
+        ----------
+        symbol:
+            Unit symbol (e.g. "m")
+        quantity:
+            Unit quantity (e.g. "length")
+        name:
+            Unit name (e.g. "meter")
+        si_prefixes:
+            List of supported international system prefixes (e.g. "k", "micro")
+        order:
+            Order of the quantity
+        values:
+            Values expressed in other units
+        """
         # Default mutable values
         if values is None:
             values = {}
         if si_prefixes is None:
             si_prefixes = []
+        if name is None:
+            name = all_units.get(symbol)
 
         super().__init__(values)
 
@@ -58,11 +79,8 @@ class Unit(dict):
             p0, k = _split_symbol(self.symbol)
             self[p + k] = (si_prefixes[p0][0] / si_prefixes[p][0]) ** self.order
 
-    # def __repr__(self, *args, **kwargs):
-    #     s = ""
-    #     s += "Unit of {0:s} - ".format(self.quantity)
-    #     s += "{0:s} [{1:s}]\n".format(self.name, self.symbol)
-    #     s += "values : "
-    #     s += super(UnitConstant, self).__repr__(*args, **kwargs)
-    #     s += "\n"
-    #     return s
+    def __repr__(self, *args, **kwargs):
+        s = ""
+        s += f"{self.name} [{self.symbol}] - unit of {self.quantity}:\n"
+        s += super().__repr__(*args, **kwargs)
+        return s
