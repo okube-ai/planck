@@ -6,14 +6,11 @@ __version__ = VERSION
 # Packages                                                                    #
 # --------------------------------------------------------------------------- #
 
+import planck.models
 
 # --------------------------------------------------------------------------- #
 # Classes                                                                     #
 # --------------------------------------------------------------------------- #
-
-from .physicalnondimensionalconstant import PhysicalNonDimensionalConstant
-from .physicalnondimensionalconstant import PhysicalNonDimensionalConstant
-from .unitconstant import UnitConstant
 
 
 # --------------------------------------------------------------------------- #
@@ -21,4 +18,3 @@ from .unitconstant import UnitConstant
 # --------------------------------------------------------------------------- #
 
 from .constants import constants
-from .models import models
