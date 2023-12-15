@@ -5,14 +5,14 @@ from typing import Dict
 # Main Class                                                                  #
 # --------------------------------------------------------------------------- #
 
-class DimensionalConstant(dict):
-    def __init__(
-            self,
-            symbol: str,
-            name: str = None,
-            values: Dict[str, float] = None,
-    ):
 
+class DimensionalPhysicalConstant(dict):
+    def __init__(
+        self,
+        symbol: str,
+        name: str = None,
+        values: Dict[str, float] = None,
+    ):
         # Default mutable values
         if values is None:
             values = {}

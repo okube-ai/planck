@@ -18,3 +18,6 @@ import planck.models
 # --------------------------------------------------------------------------- #
 
 from .constants import constants
+from .units import units
+from .functions import *
+

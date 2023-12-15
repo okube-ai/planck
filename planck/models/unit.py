@@ -26,19 +26,17 @@ def _split_symbol(symbol):
 # Main Class                                                                  #
 # --------------------------------------------------------------------------- #
 
+
 class Unit(dict):
-
     def __init__(
-            self,
-            symbol: str,
-            quantity: str,
-            name: str = None,
-            si_prefixes: list = None,
-            order: int = 1,
-            values: Dict[str, float] = None,
-
+        self,
+        symbol: str,
+        quantity: str,
+        name: str = None,
+        si_prefixes: list = None,
+        order: int = 1,
+        values: Dict[str, float] = None,
     ):
-
         # Default mutable values
         if values is None:
             values = {}

@@ -1,3 +1,3 @@
-from planck.models.dimensionalconstant import DimensionalConstant
-from planck.models.nondimensionalconstant import NonDimensionalConstant
+from planck.models.dimensionalphysicalconstant import DimensionalPhysicalConstant
+from planck.models.nondimensionalphysicalconstant import NonDimensionalPhysicalConstant
 from planck.models.unit import Unit

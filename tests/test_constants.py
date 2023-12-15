@@ -1,29 +1,33 @@
-import pytest
 from planck import constants
-# from planck.constants import convert_temperature
 
 
 def test_constants():
-    assert constants["m"]["mm"] == 1000
+    g = constants["g_acc"]
+    assert g.name == "Gravitational acceleration"
+    assert g.symbol == "g_acc"
+    assert g == {"m/s2": 9.80665, "ft/s2": 32.17404855643045}
 
-    for k in ["m", "g_acc", "gamma_air"]:
-        assert constants[k].name in constants[k].__repr__()
-
-
-def test_find_constants():
-    assert "kg" in constants.find_unit_constants("kg")
-    assert "kg/m3" in constants.find_unit_constants("kg")
-
-    assert "g_acc" in constants.find_physical_constants("g")
-    assert "gamma_air" in constants.find_physical_constants("g")
+    gamma = constants["gamma_air"]
+    assert gamma.name == "Ratio of specific heats (cp/cv) for air"
+    assert gamma.symbol == "gamma_air"
+    assert gamma == 1.4
 
 
-# def test_convert_temperature():
-#     assert convert_temperature(0, "degc", "K") == 273.15
-#     assert convert_temperature(0, "c", "F") == 32.0
+def test_find():
+    assert constants.find("isa") == [
+        "isa_T0",
+        "isa_T_tropo",
+        "isa_Tc_tropo",
+        "isa_alt_tropo",
+        "isa_c0",
+        "isa_lapse_rate",
+        "isa_p0",
+        "isa_p_tropo",
+        "isa_pc_tropo",
+        "isa_rho0",
+    ]
 
 
 if __name__ == "__main__":
     test_constants()
-    test_find_constants()
-    # test_convert_temperature()
+    test_find()
