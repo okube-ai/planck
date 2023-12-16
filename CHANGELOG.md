@@ -2,13 +2,9 @@
 
 ## [0.0.3] - Unreleased
 ### Added
-* n/a
-### Fixed
-* n/a
-### Updated
-* n/a
+* Example for convert function
 ### Breaking changes
-* n/a
+* Renamed arguments for convert function
 
 ## [0.0.2] - 2023-12-15
 ### Added
