@@ -61,8 +61,8 @@ unit_without_prefixes = {
     "min": "minute",
     "h": "hour",
     "d": "day",
-    "week": "week",  # Not symbol in SI system
-    "month": "month",  # Not symbol in SI system
+    "week": "week",  # No symbol in SI system
+    "month": "month",  # No symbol in SI system
     "a": "year",
     "kt": "knot",
     "rad": "radian",

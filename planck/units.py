@@ -30,35 +30,47 @@ class Units(dict):
     Units library storing `planck.models.Unit` models.
     """
     def convert(
-        self, value: Union[float, np.array], source_unit: str, target_unit: str
+        self, value: Union[float, np.array], input_unit: str, output_unit: str
     ) -> Union[float, np.array]:
         """
-        Convert a `value` from `source_unit` to `target_unit`
+        Convert a `value` from `input_unit` to `output_unit`
 
         Parameters
         ----------
         value:
             Value to convert
-        source_unit:
+        input_unit:
             Source unit
-        target_unit:
+        output_unit:
             Target unit
 
         Returns
         -------
         :
-            Value expressed as `target_unit`
+            Value expressed as `output_unit`
+
+        Examples
+        --------
+        ```py
+        from planck import units
+
+        print(units.convert(1.0, "m", "ft"))
+        #> 3.280839895013124
+
+        print(units.convert(0.0, "C", "K"))
+        #> 273.15
+        ```
         """
 
         # Temperature
-        if source_unit.lower() in TEMPERATURE_UNITS:
-            if source_unit == "degc":
-                source_unit = "c"
-            if target_unit == "degc":
-                target_unit = "c"
-            return sp_constants.convert_temperature(value, source_unit, target_unit)
+        if input_unit.lower() in TEMPERATURE_UNITS:
+            if input_unit == "degc":
+                input_unit = "c"
+            if output_unit == "degc":
+                output_unit = "c"
+            return sp_constants.convert_temperature(value, input_unit, output_unit)
 
-        return value * units[source_unit][target_unit]
+        return value * self[input_unit][output_unit]
 
     def find(self, sub: str = None, quantity: str = None) -> list:
         """
