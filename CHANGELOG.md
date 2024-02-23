@@ -1,14 +1,8 @@
 # Release History
 
 ## [0.0.4] - Unreleased
-### Added
-* n/a
-### Fixed
-* n/a
 ### Updated
-* n/a
-### Breaking changes
-* n/a
+* Documentation branding
 
 ## [0.0.3] - 2023-12-16
 ### Added
