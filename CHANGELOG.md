@@ -1,6 +1,16 @@
 # Release History
 
-## [0.0.4] - Unreleased
+## [0.0.5] - Unreleased
+### Added
+* n/a
+### Fixed
+* n/a
+### Updated
+* n/a
+### Breaking changes
+* n/a
+
+## [0.0.4] - 2024-02-23
 ### Updated
 * Documentation branding
 
