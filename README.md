@@ -8,6 +8,9 @@
 
 Physical constants and unit conversion.
 
+<img src="docs/images/planck_so.png" alt="settus logo" width="85"/>
+
+
 Planck makes it easy to convert units and to access physical constant values in multiple units.
 
 ## Help
@@ -35,6 +38,7 @@ print(1 * units["m"]["ft"])
 To get started with more examples, jump into the [Quickstart](https://www.okube.ai/planck/quickstart/).
 
 ## Okube Company
-Okube is dedicated to build open source frameworks, the *kubes*, that empower businesses to build and deploy highly scalable data platforms and AI models. Contributions are more than welcome.
+<img src="docs/images/okube.png" alt="okube logo" width="85"/>
 
+[Okube](https://www.okube.ai) is dedicated to building open source frameworks, known as the *kubes*, empowering businesses to build, deploy and operate highly scalable data platforms and AI models. 
 

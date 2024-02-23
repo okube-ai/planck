@@ -1,4 +1,4 @@
-site_name: Planck
+site_name: " "
 site_description: Physical constants and unit conversion
 site_url: https://www.okube.ai/planck
 repo_url: https://github.com/okube-ai/planck
@@ -50,6 +50,8 @@ theme:
     - search.highlight
     - search.suggest
     - toc.follow
+  logo: images/planck_sw_ltw.png
+  favicon: images/planck_sg.png
 
 plugins:
   - mkdocstrings:
