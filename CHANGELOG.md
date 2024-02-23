@@ -1,6 +1,16 @@
 # Release History
 
-## [0.0.5] - Unreleased
+## [0.0.6] - Unreleased
+### Added
+* n/a
+### Fixed
+* n/a
+### Updated
+* n/a
+### Breaking changes
+* n/a
+
+## [0.0.5] - 2024-02-23
 ### Added
 * n/a
 ### Fixed
