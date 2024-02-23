@@ -12,7 +12,7 @@
 
 ## [0.0.4] - 2024-02-23
 ### Updated
-* Documentation branding
+* Documentation branding design
 
 ## [0.0.3] - 2023-12-16
 ### Added
