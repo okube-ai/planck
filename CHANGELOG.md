@@ -2,13 +2,7 @@
 
 ## [0.0.6] - Unreleased
 ### Added
-* n/a
-### Fixed
-* n/a
-### Updated
-* n/a
-### Breaking changes
-* n/a
+* Planck constant
 
 ## [0.0.5] - 2024-02-23
 ### Added

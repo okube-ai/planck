@@ -12,6 +12,10 @@ def test_constants():
     assert gamma.symbol == "gamma_air"
     assert gamma == 1.4
 
+    planck = constants["planck"]
+    assert planck.name.startswith("Planck constant")
+    assert planck["J*Hz"] == 6.62607015e-34
+
 
 def test_find():
     assert constants.find("isa") == [
