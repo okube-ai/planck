@@ -1,6 +1,16 @@
 # Release History
 
-## [0.0.6] - Unreleased
+## [0.0.7] - Unreleased
+### Added
+* n/a
+### Fixed
+* n/a
+### Updated
+* n/a
+### Breaking changes
+* n/a
+
+## [0.0.6] - 2024-02-24
 ### Added
 * Planck constant
 
