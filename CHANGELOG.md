@@ -3,6 +3,7 @@
 ## [0.0.7] - Unreleased
 ### Updated
 * Moved numpy to optional dependency
+* Python support for 3.12 and 3.13
 
 ## [0.0.6] - 2024-02-24
 ### Added
