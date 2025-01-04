@@ -1,14 +1,8 @@
 # Release History
 
 ## [0.0.7] - Unreleased
-### Added
-* n/a
-### Fixed
-* n/a
 ### Updated
-* n/a
-### Breaking changes
-* n/a
+* Moved numpy to optional dependency
 
 ## [0.0.6] - 2024-02-24
 ### Added
