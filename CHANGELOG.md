@@ -1,6 +1,16 @@
 # Release History
 
-## [0.0.7] - Unreleased
+## [0.0.8] - Unreleased
+### Added
+* n/a
+### Fixed
+* n/a
+### Updated
+* n/a
+### Breaking changes
+* n/a
+
+## [0.0.7] - 2025-01-04
 ### Updated
 * Moved numpy to optional dependency
 * Python support for 3.12 and 3.13
