@@ -14,7 +14,9 @@ def test_docstrings_api(example: CodeExample, eval_example: EvalExample):
         eval_example.run_print_update(example)
     else:
         eval_example.lint(example)
-        eval_example.run_print_check(example,)
+        eval_example.run_print_check(
+            example,
+        )
 
 
 # --------------------------------------------------------------------------- #

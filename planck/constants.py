@@ -1,4 +1,4 @@
-import numpy as np
+import math
 
 from planck._common import shortcuts
 from planck._scipy import sp_constants
@@ -17,6 +17,7 @@ class Constants(dict):
     Constants library storing `planck.models.DimensionalPhysicalConstant` and
     `planck.models.NonDimensionalPhysicalConstant` models.
     """
+
     def find(self, sub: str = None) -> list:
         """
         Return list of constant keys containing a given string
@@ -134,8 +135,8 @@ d["isa_c0"] = DC(
     "isa_c0",
     "ISA speed of sound at sea level",
     {
-        "m/s": np.sqrt(d["gamma_air"] * d["isa_p0"]["Pa"] / d["isa_rho0"]["kg/m3"]),
-        "ft/s": np.sqrt(d["gamma_air"] * d["isa_p0"]["Pa"] / d["isa_rho0"]["kg/m3"])
+        "m/s": math.sqrt(d["gamma_air"] * d["isa_p0"]["Pa"] / d["isa_rho0"]["kg/m3"]),
+        "ft/s": math.sqrt(d["gamma_air"] * d["isa_p0"]["Pa"] / d["isa_rho0"]["kg/m3"])
         * units["m/s"]["ft/s"],
     },
 )

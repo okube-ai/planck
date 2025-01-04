@@ -1,5 +1,4 @@
 import pytest
-import numpy as np
 
 from planck import units
 
@@ -34,7 +33,7 @@ def test_convert():
     assert units.convert(1, "m/s", "kt") == pytest.approx(1.94384, rel=0.001)
     assert units.convert(0, "degc", "K") == 273.15
     assert units.convert(0, "degc", "Fahrenheit") == 32
-    assert units.convert(np.array([0, 1]), "m", "mm").tolist() == [0, 1000]
+    assert units.convert([0, 1], "m", "mm") == [0, 1000]
 
 
 if __name__ == "__main__":
