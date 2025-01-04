@@ -1,8 +1,10 @@
+import math
 from typing import Union
-from typing import List
-import numpy as np
+from typing import TYPE_CHECKING
 
 from planck._scipy import sp_constants
+from planck._scipy import asanyarray
+from planck._scipy import ArrayLike
 from planck.models.unit import Unit
 from planck._common import shortcuts
 
@@ -19,6 +21,8 @@ TEMPERATURE_UNITS = [
     "r",
 ]
 
+if TYPE_CHECKING:
+    import numpy as np
 
 # --------------------------------------------------------------------------- #
 # Main Class                                                                  #
@@ -29,9 +33,10 @@ class Units(dict):
     """
     Units library storing `planck.models.Unit` models.
     """
+
     def convert(
-        self, value: Union[float, np.array], input_unit: str, output_unit: str
-    ) -> Union[float, np.array]:
+        self, value: Union[float, "np.array"], input_unit: str, output_unit: str
+    ) -> Union[float, "np.array"]:
         """
         Convert a `value` from `input_unit` to `output_unit`
 
@@ -70,7 +75,10 @@ class Units(dict):
                 output_unit = "c"
             return sp_constants.convert_temperature(value, input_unit, output_unit)
 
-        return value * self[input_unit][output_unit]
+        output = asanyarray(value) * self[input_unit][output_unit]
+        if isinstance(output, ArrayLike):
+            output = output.to_list()
+        return output
 
     def find(self, sub: str = None, quantity: str = None) -> list:
         """
@@ -243,7 +251,7 @@ d[s] = Unit(
     values={
         "1/s": 1.0,
         "1/min": 1 / d["s"]["min"],
-        "rad/s": 2 * np.pi,
+        "rad/s": 2 * math.pi,
     },
     si_prefixes=["", "k", "M"],
 )

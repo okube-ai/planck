@@ -1,5 +1,4 @@
 import math
-import numpy as np
 
 DEFAULT_PERIOD = "1d"
 
@@ -7,6 +6,35 @@ DEFAULT_PERIOD = "1d"
 # --------------------------------------------------------------------------- #
 # Main Class - scipy.constants mock                                           #
 # --------------------------------------------------------------------------- #
+
+class ArrayLike(list):
+
+    def __add__(self, other):
+        return ArrayLike([i + other for i in self])
+
+    def __sub__(self, other):
+        return ArrayLike([i - other for i in self])
+
+    def __mul__(self, other):
+        return ArrayLike([i * other for i in self])
+
+    def __truediv__(self, other):
+        return ArrayLike([i / other for i in self])
+
+    def to_list(self):
+        return [i for i in self]
+
+
+def asanyarray(val):
+    try:
+        import numpy as np
+        return asanyarray(val)
+    except ModuleNotFoundError:
+        if isinstance(val, (list, set, tuple)):
+            #TODO: Log performance low?
+            return ArrayLike(val)
+        else:
+            return val
 
 
 class ScipyConstants:
@@ -69,13 +97,13 @@ class ScipyConstants:
         """
         # Convert from `old_scale` to Kelvin
         if old_scale.lower() in ["celsius", "c"]:
-            tempo = np.asanyarray(val) + self.zero_Celsius
+            tempo = asanyarray(val) + self.zero_Celsius
         elif old_scale.lower() in ["kelvin", "k"]:
-            tempo = np.asanyarray(val)
+            tempo = asanyarray(val)
         elif old_scale.lower() in ["fahrenheit", "f"]:
-            tempo = (np.asanyarray(val) - 32) * 5 / 9 + self.zero_Celsius
+            tempo = (asanyarray(val) - 32) * 5 / 9 + self.zero_Celsius
         elif old_scale.lower() in ["rankine", "r"]:
-            tempo = np.asanyarray(val) * 5 / 9
+            tempo = asanyarray(val) * 5 / 9
         else:
             raise NotImplementedError(
                 "%s scale is unsupported: supported scales "
@@ -97,6 +125,9 @@ class ScipyConstants:
                 "scales are 'Celsius', 'Kelvin', "
                 "'Fahrenheit', and 'Rankine'" % new_scale
             )
+
+        if isinstance(res, ArrayLike):
+            res = res.to_list()
 
         return res
 

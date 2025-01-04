@@ -36,10 +36,12 @@ classifiers = [
 ]
 dynamic = ["version"]
 dependencies = [
-    "numpy",
 ]
 
 [project.optional-dependencies]
+numpy = [
+    "numpy"
+]
 dev = [
     "black",
 #    "flit",
