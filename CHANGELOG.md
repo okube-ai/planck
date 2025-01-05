@@ -1,6 +1,16 @@
 # Release History
 
-## [0.0.8] - Unreleased
+## [0.0.9] - Unreleased
+### Added
+* n/a
+### Fixed
+* n/a
+### Updated
+* n/a
+### Breaking changes
+* n/a
+
+## [0.0.8] - 2025-01-05
 ### Fixed
 * Maximum recursion depth when using numpy
 
