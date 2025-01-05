@@ -28,7 +28,7 @@ class ArrayLike(list):
 def asanyarray(val):
     try:
         import numpy as np
-        return asanyarray(val)
+        return np.asanyarray(val)
     except ModuleNotFoundError:
         if isinstance(val, (list, set, tuple)):
             #TODO: Log performance low?
